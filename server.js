@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 app.get("/api/airbnb/listings", async (req, res) => {
   // Get data from MongoDB
   const query = {};
-  const places = await Place.find(query).limit(2);
+  const places = await Place.find(query).limit(20);
   console.log(places);
   res.json(places);
 });
@@ -32,7 +32,7 @@ app.get("/api/airbnb/listings/:id", async (req, res) => {
   // Get data from MongoDB
   console.log(req.params.id);
   const query = { _id: req.params.id };
-  const places = await Place.find(query);
+  const places = await Place.find(query).limit(20);
   console.log(places);
   res.json(places);
 });
