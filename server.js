@@ -3,6 +3,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const Place = require("./models/place");
+const cors = require('cors');
+app.use(cors());
 
 // const uri = 'mongodb://admin:admin@cluster0-shard-00-00-faqqw.gcp.mongodb.net:27017,cluster0-shard-00-01-faqqw.gcp.mongodb.net:27017,cluster0-shard-00-02-faqqw.gcp.mongodb.net:27017/sample_airbnb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 // test Azure
